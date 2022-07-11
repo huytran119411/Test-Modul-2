@@ -160,11 +160,10 @@ public class ProductManagement {
     }
 
     public void searchMaxPrice() {
-        Product max = null;
-        for (int i = 0; i < productArrayList.size(); i++) {
-            max = productArrayList.get(i);
-            if (max.getPrice() < productArrayList.get(i + 1).getPrice()) {
-                max = productArrayList.get(i + 1);
+        Product max = productArrayList.get(0);
+        for (Product product : productArrayList) {
+            if (max.getPrice() < product.getPrice()) {
+                max = product;
             }
         }
         System.out.println(max);
